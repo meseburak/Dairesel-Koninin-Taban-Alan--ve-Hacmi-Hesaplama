@@ -1,0 +1,18 @@
+ double alan, hacim,yukseklik, yaricap;
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ',';
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            yukseklik = Convert.ToDouble(textBox1.Text);
+            yaricap = Convert.ToDouble(textBox2.Text);
+            alan = Math.Pow(yaricap, 2) * Math.PI;
+            hacim = alan * (yukseklik/3);
+            alan = Math.Round(alan, 3);
+            hacim = Math.Round(hacim, 3);
+            MessageBox.Show("Alan Sonucu: "+alan+ "Hacim Sonucu: "+hacim, "SONUÇ BİLGİLENDİRME");
+        }
